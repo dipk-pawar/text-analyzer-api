@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - model_cache:/app/.cache/huggingface
+    environment:
+      - MODEL_CACHE_DIR=/app/.cache/huggingface
+
+volumes:
+  model_cache:
